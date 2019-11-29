@@ -1,15 +1,37 @@
 import React from 'react'
 import NoteForm from './create-note-form'
 import './createLayout.css'
+import NoteCard from './note-card'
 
-
-export default function createNote() {
-    return (
-        <div className="create-layout">
-            <NoteForm/>
+export default class createNote extends React.Component {
+    
+    state={form:{
+        title : '',
+        content:'',
+        author:'',
+        date:''
+    }
+    }
+    handleClick= e =>{
+        console.log('a button was clicked')
+    }
+    handleChange = e =>{
+        this.setState({form:
+            {...this.state.form,
+            [e.target.name]:[e.target.value]}    
+        }
+        )
+      console.log(this.state)
+    }
+    render() {
+        return (
+            <div className="create-layout">
+            <NoteForm click={this.handleClick} change={this.handleChange} form={this.state.form}/>
             <div className="create-preview">
-
+                <h1 className="preview-title">Preview</h1>
+                <NoteCard title/>
             </div>
-        </div>
-    )
+            </div>
+        )
+    }
 }

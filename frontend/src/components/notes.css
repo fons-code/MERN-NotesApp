@@ -1,0 +1,13 @@
+.notes-layout{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr,3);
+}
+
+.notes-title{
+    font-family: "roboto";
+    font-size: 28px;
+    margin: 25px;
+}

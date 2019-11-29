@@ -1,0 +1,36 @@
+nav{
+    background: #6200EE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: arial;
+    width: 100%;
+}
+.nav-logo{
+    font-family: 'Lobster', cursive;
+    margin: 0 15px;
+    font-size: 26px;
+    color: white;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border-left: 1px solid white;
+}
+li{
+    font-family: 'roboto','sans-serif';
+    margin: 0 18px;
+    padding: 5px;
+    transition: 1s;
+    font-size: 16px;
+}
+li:hover{
+    background-color: #311B92;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+}

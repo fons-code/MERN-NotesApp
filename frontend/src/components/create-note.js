@@ -16,12 +16,12 @@ export default class createNote extends React.Component {
         console.log('a button was clicked')
     }
     handleChange = e =>{
-        this.setState({form:
+        const newForm = {form:
             {...this.state.form,
             [e.target.name]:[e.target.value]}    
         }
-        )
-      console.log(this.state)
+        this.setState(newForm, () => console.log(this.state))
+     
     }
     render() {
         return (
@@ -29,7 +29,11 @@ export default class createNote extends React.Component {
             <NoteForm click={this.handleClick} change={this.handleChange} form={this.state.form}/>
             <div className="create-preview">
                 <h1 className="preview-title">Preview</h1>
-                <NoteCard title/>
+                <NoteCard 
+                    title={this.state.form.title}
+                    content={this.state.form.content}
+                    author={this.state.form.author}
+                    date={this.state.form.date}/>
             </div>
             </div>
         )

@@ -6,7 +6,8 @@ const noteSchema =  new Schema({
         type:String,
         required:true,
         trim:true},
-    author:String
+    author:String,
+    date:Date
 },
     {timeStamps:true}
     )
